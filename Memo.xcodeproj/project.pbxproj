@@ -12,6 +12,7 @@
 		3D0EAE672252467A00EEE252 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D0EAE662252467A00EEE252 /* Assets.xcassets */; };
 		3D0EAE732252479C00EEE252 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0EAE722252479C00EEE252 /* SnapKit.framework */; };
 		3D59F15A22524A8C00710F8A /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D59F15922524A8C00710F8A /* Memo.swift */; };
+		3D59F15C22525FA200710F8A /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D59F15B22525FA200710F8A /* MemoCell.swift */; };
 		E2C07AA10AD123CF2F2CF94D /* Pods_Memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F804267FFBDCEB0A9DD28A96 /* Pods_Memo.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		3D0EAE6B2252467A00EEE252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D0EAE722252479C00EEE252 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		3D59F15922524A8C00710F8A /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		3D59F15B22525FA200710F8A /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		420D0508AB0E902451D95D3F /* Pods-Memo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.release.xcconfig"; path = "Target Support Files/Pods-Memo/Pods-Memo.release.xcconfig"; sourceTree = "<group>"; };
 		E017429CFED2D77B3363F89B /* Pods-Memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.debug.xcconfig"; path = "Target Support Files/Pods-Memo/Pods-Memo.debug.xcconfig"; sourceTree = "<group>"; };
 		F804267FFBDCEB0A9DD28A96 /* Pods_Memo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,7 @@
 		3D59F1562252497F00710F8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D59F15B22525FA200710F8A /* MemoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				3D59F15A22524A8C00710F8A /* Memo.swift in Sources */,
 				3D0EAE652252467500EEE252 /* Memo.xcdatamodeld in Sources */,
 				3D0EAE5D2252467500EEE252 /* AppDelegate.swift in Sources */,
+				3D59F15C22525FA200710F8A /* MemoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
