@@ -53,12 +53,12 @@ final class MemoCell: UITableViewCell {
     }
     
     private func setupConstraints() {
-        contentView.snp.makeConstraints {
+        contentLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(20)
             $0.bottom.equalTo(contentView.snp.centerY).offset(-2)
             $0.right.lessThanOrEqualTo(-20)
         }
-        contentView.snp.makeConstraints {
+        dateLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(20)
             $0.top.equalTo(contentView.snp.centerY).offset(2)
             $0.right.lessThanOrEqualTo(-20)
