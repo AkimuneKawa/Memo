@@ -13,6 +13,8 @@
 		3D0EAE732252479C00EEE252 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0EAE722252479C00EEE252 /* SnapKit.framework */; };
 		3D59F15A22524A8C00710F8A /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D59F15922524A8C00710F8A /* Memo.swift */; };
 		3D59F15C22525FA200710F8A /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D59F15B22525FA200710F8A /* MemoCell.swift */; };
+		3D59F15E2253229C00710F8A /* MemosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D59F15D2253229C00710F8A /* MemosManager.swift */; };
+		3D59F1602253294B00710F8A /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D59F15F2253294B00710F8A /* Formatter.swift */; };
 		E2C07AA10AD123CF2F2CF94D /* Pods_Memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F804267FFBDCEB0A9DD28A96 /* Pods_Memo.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		3D0EAE722252479C00EEE252 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		3D59F15922524A8C00710F8A /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		3D59F15B22525FA200710F8A /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+		3D59F15D2253229C00710F8A /* MemosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemosManager.swift; sourceTree = "<group>"; };
+		3D59F15F2253294B00710F8A /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		420D0508AB0E902451D95D3F /* Pods-Memo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.release.xcconfig"; path = "Target Support Files/Pods-Memo/Pods-Memo.release.xcconfig"; sourceTree = "<group>"; };
 		E017429CFED2D77B3363F89B /* Pods-Memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.debug.xcconfig"; path = "Target Support Files/Pods-Memo/Pods-Memo.debug.xcconfig"; sourceTree = "<group>"; };
 		F804267FFBDCEB0A9DD28A96 /* Pods_Memo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +109,7 @@
 		3D59F1542252495A00710F8A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				3D59F15D2253229C00710F8A /* MemosManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 		3D59F158225249B800710F8A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				3D59F15F2253294B00710F8A /* Formatter.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -277,9 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D59F1602253294B00710F8A /* Formatter.swift in Sources */,
 				3D59F15A22524A8C00710F8A /* Memo.swift in Sources */,
 				3D0EAE652252467500EEE252 /* Memo.xcdatamodeld in Sources */,
 				3D0EAE5D2252467500EEE252 /* AppDelegate.swift in Sources */,
+				3D59F15E2253229C00710F8A /* MemosManager.swift in Sources */,
 				3D59F15C22525FA200710F8A /* MemoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
