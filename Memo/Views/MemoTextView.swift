@@ -11,7 +11,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class memoTextView: UIView {
+final class MemoTextView: UIView {
     struct Const {
         static let identifier = "MemoTextView"
     }

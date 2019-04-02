@@ -11,13 +11,13 @@ import UIKit
 import SnapKit
 import Then
 
-final class MemosManager {
+class MemosManager {
     let userDefaults = UserDefaults.standard
     let userDefaultKey = "Memos"
     
     //MARK: - Methods
     
-    private func loadMemos() -> [Memo] {
+    func loadMemos() -> [Memo] {
         var retMemos: [Memo] = []
         var unsortedMemos: Dictionary<String,[String]> = [:]
         if let tmpMemos = userDefaults.dictionary(forKey: userDefaultKey) as? Dictionary<String,[String]> {
@@ -38,7 +38,7 @@ final class MemosManager {
         return retMemos
     }
     
-    private func saveMemo(memo: Memo) {
+    func saveMemo(memo: Memo) {
         var savedMemos: Dictionary<String,[String]> = [:]
         let dateLastTouched: String = DateFormatter.default.string(from: Date())
         
