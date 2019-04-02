@@ -50,4 +50,18 @@ class MemosManager {
         
         userDefaults.set(savedMemos, forKey: userDefaultKey)
     }
+    
+    func deleteMemo(id: String) {
+        let memos = loadMemos()
+        allDelete()
+        for memo in memos {
+            if memo.id != id {
+                saveMemo(memo: memo)
+            }
+        }
+    }
+    
+    func allDelete() {
+        userDefaults.removeObject(forKey: userDefaultKey)
+    }
 }

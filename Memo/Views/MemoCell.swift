@@ -47,9 +47,8 @@ final class MemoCell: UITableViewCell {
     
     private func setupViews() {
         contentView.backgroundColor = .white
-        
-        addSubview(contentLabel)
-        addSubview(dateLabel)
+        contentView.addSubview(contentLabel)
+        contentView.addSubview(dateLabel)
     }
     
     private func setupConstraints() {
