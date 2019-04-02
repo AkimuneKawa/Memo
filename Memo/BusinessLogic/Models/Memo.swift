@@ -14,7 +14,6 @@ struct Memo {
     var dateLastTouched: String = ""
     
     init() {
-        var tv = timeval()
-        id = "\(gettimeofday(&tv, nil))"
+        id = String(Date().timeIntervalSince1970)
     }
 }
