@@ -55,10 +55,17 @@ final class MemoListViewController: UIViewController {
         reloadRequest()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        setEditing(false, animated: true)
+    }
+    
     //MARK: - SetupMethods
     
     private func setupViews() {
         navigationItem.title = "メモ一覧"
+        navigationItem.rightBarButtonItem = editButtonItem
         view.backgroundColor = .white
         
         tableView.dataSource = self
@@ -127,5 +134,22 @@ extension MemoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let memoTextViewController = MemoTextViewController(memo: memos[indexPath.row])
         navigationController?.pushViewController(memoTextViewController, animated: true)
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.isEditing = editing
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let memosManager = MemosManager()
+        memosManager.deleteMemo(id: memos[indexPath.row].id)
+        memos.remove(at: indexPath.row)
+        
+        tableView.deleteRows(at: [indexPath], with: .fade)
     }
 }
