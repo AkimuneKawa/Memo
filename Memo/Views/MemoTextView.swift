@@ -37,6 +37,7 @@ final class MemoTextView: UIView {
     private func setupViews(){
         backgroundColor = .white
         textView.backgroundColor = .white
+        textView.font = UIFont.systemFont(ofSize: 16)
         
         addSubview(textView)
     }

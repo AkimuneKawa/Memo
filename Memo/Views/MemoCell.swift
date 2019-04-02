@@ -14,18 +14,23 @@ import Then
 final class MemoCell: UITableViewCell {
     struct Const {
         static let identifier: String = "MemoCell"
-        static let cellHeight: CGFloat = 50
+        static let contentLabelSize: CGFloat = 16
+        static let dateLabelSize: CGFloat = 12
+        static let cellHeight: CGFloat = UILabel.oneLineLabelHeight(
+            size: contentLabelSize,
+            weight: .bold
+        ) * 2 + 20 
     }
     //MARK: - Views
     
     var contentLabel = UILabel().then {
-        $0.font = .boldSystemFont(ofSize: 20)
+        $0.font = .boldSystemFont(ofSize: Const.contentLabelSize)
         $0.textColor = .black
         $0.lineBreakMode = .byTruncatingTail
     }
     
     var dateLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 10)
+        $0.font = .systemFont(ofSize: Const.dateLabelSize)
         $0.textColor = .gray
         $0.lineBreakMode = .byTruncatingTail
     }

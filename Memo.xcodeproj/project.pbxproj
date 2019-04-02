@@ -18,6 +18,7 @@
 		3D59F1622253310600710F8A /* MemoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D59F1612253310600710F8A /* MemoTextView.swift */; };
 		3D59F1642253361600710F8A /* MemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D59F1632253361600710F8A /* MemoListViewController.swift */; };
 		3D59F1662253504F00710F8A /* MemoTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D59F1652253504F00710F8A /* MemoTextViewController.swift */; };
+		3D59F16922536FDE00710F8A /* UILabel+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D59F16822536FDE00710F8A /* UILabel+extention.swift */; };
 		E2C07AA10AD123CF2F2CF94D /* Pods_Memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F804267FFBDCEB0A9DD28A96 /* Pods_Memo.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		3D59F1612253310600710F8A /* MemoTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTextView.swift; sourceTree = "<group>"; };
 		3D59F1632253361600710F8A /* MemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewController.swift; sourceTree = "<group>"; };
 		3D59F1652253504F00710F8A /* MemoTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTextViewController.swift; sourceTree = "<group>"; };
+		3D59F16822536FDE00710F8A /* UILabel+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+extention.swift"; sourceTree = "<group>"; };
 		420D0508AB0E902451D95D3F /* Pods-Memo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.release.xcconfig"; path = "Target Support Files/Pods-Memo/Pods-Memo.release.xcconfig"; sourceTree = "<group>"; };
 		E017429CFED2D77B3363F89B /* Pods-Memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.debug.xcconfig"; path = "Target Support Files/Pods-Memo/Pods-Memo.debug.xcconfig"; sourceTree = "<group>"; };
 		F804267FFBDCEB0A9DD28A96 /* Pods_Memo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 		3D0EAE5B2252467500EEE252 /* Memo */ = {
 			isa = PBXGroup;
 			children = (
+				3D59F16722536FB200710F8A /* Extentions */,
 				3D59F158225249B800710F8A /* Utilities */,
 				3D59F1522252494500710F8A /* BusinessLogic */,
 				3D59F1562252497F00710F8A /* Views */,
@@ -144,6 +147,14 @@
 				3D59F15F2253294B00710F8A /* Formatter.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3D59F16722536FB200710F8A /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				3D59F16822536FDE00710F8A /* UILabel+extention.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 		4C7E25B31562D47E8AB04D26 /* Pods */ = {
@@ -295,6 +306,7 @@
 				3D59F1642253361600710F8A /* MemoListViewController.swift in Sources */,
 				3D59F1622253310600710F8A /* MemoTextView.swift in Sources */,
 				3D59F1602253294B00710F8A /* Formatter.swift in Sources */,
+				3D59F16922536FDE00710F8A /* UILabel+extention.swift in Sources */,
 				3D59F15A22524A8C00710F8A /* Memo.swift in Sources */,
 				3D0EAE652252467500EEE252 /* Memo.xcdatamodeld in Sources */,
 				3D0EAE5D2252467500EEE252 /* AppDelegate.swift in Sources */,
