@@ -23,13 +23,13 @@ final class MemoCell: UITableViewCell {
     }
     //MARK: - Views
     
-    var contentLabel = UILabel().then {
+    private var contentLabel = UILabel().then {
         $0.font = .boldSystemFont(ofSize: Const.contentLabelSize)
         $0.textColor = .black
         $0.lineBreakMode = .byTruncatingTail
     }
     
-    var dateLabel = UILabel().then {
+    private var dateLabel = UILabel().then {
         $0.font = .systemFont(ofSize: Const.dateLabelSize)
         $0.textColor = .gray
         $0.lineBreakMode = .byTruncatingTail

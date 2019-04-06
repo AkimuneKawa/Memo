@@ -17,7 +17,7 @@ final class MemoListViewController: UIViewController {
     }
     //MARK: - Variables
     
-    var memos: [Memo] = []
+    private var memos: [Memo] = []
     
     //MARK: - Views
     
@@ -118,8 +118,7 @@ extension MemoListViewController: UITableViewDataSource {
         let memo = memos[indexPath.row]
         
         if let memoCell = cell as? MemoCell {
-            memoCell.contentLabel.text = memo.content
-            memoCell.dateLabel.text = memo.dateLastTouched
+            memoCell.set(memo: memo)
         }
         
         return cell
@@ -130,7 +129,7 @@ extension MemoListViewController: UITableViewDataSource {
 
 //MARK: - UITableViewDelegate
 
-extension MemoListViewController: UITableViewDelegate {
+extension MemoListViewController: UITableViewDelegate, UISearchBarDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let memoTextViewController = MemoTextViewController(memo: memos[indexPath.row])
         navigationController?.pushViewController(memoTextViewController, animated: true)
@@ -146,10 +145,15 @@ extension MemoListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let memosManager = MemosManager()
-        memosManager.deleteMemo(id: memos[indexPath.row].id)
-        memos.remove(at: indexPath.row)
-        
-        tableView.deleteRows(at: [indexPath], with: .fade)
+        switch editingStyle {
+        case .delete:
+            let memosManager = MemosManager()
+            memosManager.deleteMemo(id: memos[indexPath.row].id)
+            memos.remove(at: indexPath.row)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        case .none, .insert:
+            break
+        }
     }
 }

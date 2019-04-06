@@ -7,13 +7,12 @@
 //
 
 import Foundation
+import Then
 
 extension DateFormatter {
-    static let `default` : DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.locale = Locale.current
-        formatter.dateStyle = .short
-        formatter.timeStyle = .short
-        return formatter
-    }()
+    static let `default` = DateFormatter().then {
+        $0.locale = Locale.current
+        $0.dateStyle = .short
+        $0.timeStyle = .short
+    }
 }
