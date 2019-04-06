@@ -14,7 +14,7 @@ import Then
 final class MemoTextViewController: UIViewController { //TODO:
     //MARK: - Variables
     
-    var memo: Memo
+    private var memo: Memo
     
     //MARK: - Views
     
@@ -46,12 +46,7 @@ final class MemoTextViewController: UIViewController { //TODO:
     override func willMove(toParent parent: UIViewController?) {
         super.willMove(toParent: parent)
         
-        if parent == nil && !memoTextView.textView.text.isEmpty{
-            let memosManager = MemosManager()
-            memo.content = memoTextView.textView.text
-            memosManager.saveMemo(memo: memo)
-        }
-        
+        appendNewMemo(parent: parent)
         memoTextView.resignFirstResponder()
     }
     
@@ -75,4 +70,12 @@ final class MemoTextViewController: UIViewController { //TODO:
     }
     
     //MARK: - Methods
+    
+    private func appendNewMemo(parent: UIViewController?) {
+        if parent == nil && !memoTextView.textView.text.isEmpty{
+            let memosManager = MemosManager()
+            memo.content = memoTextView.textView.text
+            memosManager.saveMemo(memo: memo)
+        }
+    }
 }
