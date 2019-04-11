@@ -18,9 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        let memosManager = MemosManager()
+        
         window = UIWindow()
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: MemoListViewController())
+        window?.rootViewController = UINavigationController(rootViewController: MemoListViewController(memosManager: memosManager))
         
         return true
     }
