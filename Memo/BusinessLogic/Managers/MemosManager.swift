@@ -7,15 +7,18 @@
 //
 
 import Foundation
-import UIKit
-import SnapKit
 import Then
 
-class MemosManager {
+protocol MemosManagerType {
+    func loadMemos() -> [Memo]
+    func saveMemo(memo: Memo)
+    func deleteMemo(id: String)
+    func allDelete()
+}
+
+final class MemosManager: MemosManagerType{
     let userDefaults = UserDefaults.standard
     let userDefaultKey = "Memos"
-    
-    //MARK: - Methods
     
     func loadMemos() -> [Memo] {
         var retMemos: [Memo] = []

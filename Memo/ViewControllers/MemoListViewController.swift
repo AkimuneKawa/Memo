@@ -19,6 +19,8 @@ final class MemoListViewController: UIViewController {
     
     private var memos: [Memo] = []
     
+    private let memosManager: MemosManagerType
+    
     //MARK: - Views
     
     private let tableView = UITableView().then {
@@ -38,6 +40,17 @@ final class MemoListViewController: UIViewController {
         $0.setTitle("追加", for: .normal)
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.addTarget(self, action: #selector(didTapNewMemoButton), for: .touchUpInside)
+    }
+    
+    //MARK: - Initializers
+    
+    init(memosManager:MemosManagerType){
+        self.memosManager = memosManager
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: - Life Cycle
@@ -93,14 +106,13 @@ final class MemoListViewController: UIViewController {
     //MARK: - Methods
     
     private func reloadRequest() {
-        let memosManager = MemosManager()
         memos = memosManager.loadMemos()
         
         tableView.reloadData()
     }
     
     @objc private func didTapNewMemoButton() {
-        let memoTextViewController = MemoTextViewController(memo: Memo())
+        let memoTextViewController = MemoTextViewController(memo: Memo(), memosManager: memosManager)
         navigationController?.pushViewController(memoTextViewController, animated: true)
     }
 }
@@ -131,7 +143,7 @@ extension MemoListViewController: UITableViewDataSource {
 
 extension MemoListViewController: UITableViewDelegate, UISearchBarDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let memoTextViewController = MemoTextViewController(memo: memos[indexPath.row])
+        let memoTextViewController = MemoTextViewController(memo: memos[indexPath.row], memosManager: memosManager)
         navigationController?.pushViewController(memoTextViewController, animated: true)
     }
     
@@ -147,7 +159,6 @@ extension MemoListViewController: UITableViewDelegate, UISearchBarDelegate{
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            let memosManager = MemosManager()
             memosManager.deleteMemo(id: memos[indexPath.row].id)
             memos.remove(at: indexPath.row)
             

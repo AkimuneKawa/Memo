@@ -20,11 +20,13 @@ final class MemoTextViewController: UIViewController { //TODO:
     
     private let memoTextView: MemoTextView
     
+    let memosManager: MemosManagerType
+    
     //MARK: - Initializers
     
-    init(memo: Memo){
+    init(memo: Memo, memosManager:MemosManagerType){
         self.memo = memo
-        
+        self.memosManager = memosManager
         self.memoTextView = MemoTextView()
         
         super.init(nibName: nil, bundle: nil)
@@ -73,7 +75,6 @@ final class MemoTextViewController: UIViewController { //TODO:
     
     private func appendNewMemo(parent: UIViewController?) {
         if parent == nil && !memoTextView.textView.text.isEmpty{
-            let memosManager = MemosManager()
             memo.content = memoTextView.textView.text
             memosManager.saveMemo(memo: memo)
         }
